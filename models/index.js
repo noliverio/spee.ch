@@ -48,7 +48,7 @@ function getLongClaimIdFromShortClaimId (name, shortId) {
       .then(result => {
         switch (result.length) {
           case 0:
-            return reject(new Error('That is an invalid Short Claim Id'));
+            throw new Error('That is an invalid Short Claim Id');
           default: // note results must be sorted
             return resolve(result[0].claimId);
         }

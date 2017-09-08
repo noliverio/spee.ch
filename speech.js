@@ -6,6 +6,7 @@ const expressHandlebars = require('express-handlebars');
 const Handlebars = require('handlebars');
 const config = require('config');
 const logger = require('winston');
+const winstonSlackWebHook = require('./helpers/winston-slack-webhook').SlackWebHook;
 const { getDownloadDirectory } = require('./helpers/lbryApi');
 
 const PORT = 3000; // set port
@@ -15,6 +16,10 @@ const db = require('./models'); // require our models for syncing
 // configure logging
 const logLevel = config.get('Logging.LogLevel');
 require('./config/loggerSetup.js')(logger, logLevel);
+// configure slack bot for logging
+if (process.env.NODE_ENV === 'production') {
+  require('./config/slackSetup.js')(logger, winstonSlackWebHook);
+};
 
 // trust the proxy to get ip address for us
 app.enable('trust proxy');

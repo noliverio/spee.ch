@@ -4,5 +4,8 @@
 	},
 	"Database": {
 		"MySqlConnectionUri": "MYSQL_CONNECTION_STRING"
+	},
+	"Logging": {
+		"SlackWebHook": "SLACK_WEB_HOOK"
 	}
 }

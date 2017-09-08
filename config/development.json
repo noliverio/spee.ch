@@ -1,12 +1,6 @@
 {
-	"WalletConfig": {
-		"LbryClaimAddress": "none"
-	},
 	"AnalyticsConfig":{
 		"GoogleId": "UA-100747990-1"
-	},
-	"Database": {
-		"MySqlConnectionUri": "none"
 	},
 	"Logging": {
 		"LogLevel": "silly"

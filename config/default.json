@@ -9,6 +9,7 @@
 		"MySqlConnectionUri": "none"
 	},
 	"Logging": {
-		"LogLevel": "none"
+		"LogLevel": "none",
+		"SlackWebHook": "none"
 	}
 }
